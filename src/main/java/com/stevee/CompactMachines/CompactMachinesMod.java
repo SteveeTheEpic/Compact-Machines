@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.stevee.CompactMachines.api.registries.Registrate;
 import com.stevee.CompactMachines.common.data.CMBlocks;
 import com.stevee.CompactMachines.common.data.CMMachines;
+import com.stevee.CompactMachines.common.data.CMRecipeTypes;
 import com.stevee.CompactMachines.data.CMDataGen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -77,7 +78,7 @@ public class CompactMachinesMod {
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
-        //CustomRecipeTypes.init();
+        CMRecipeTypes.init();
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {

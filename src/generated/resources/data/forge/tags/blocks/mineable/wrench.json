@@ -1,5 +1,6 @@
 {
   "values": [
-    "compactmachines:compact_chemical_reactor_casing"
+    "compactmachines:compact_chemical_reactor_casing",
+    "compactmachines:pcb_factory_casing"
   ]
 }

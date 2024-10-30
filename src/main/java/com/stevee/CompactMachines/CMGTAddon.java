@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.stevee.CompactMachines.api.registries.Registrate;
+import com.stevee.CompactMachines.data.recipes.CMRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -33,7 +34,7 @@ public class CMGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        //CustomRecipes.init(provider);
+        CMRecipes.init(provider);
     }
     
     // If you have custom ingredient types, uncomment this & change to match your capability.
