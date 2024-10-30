@@ -1,19 +1,18 @@
-package com.stevee.CompactMachines;
+package com.example.examplemod;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.stevee.CompactMachines.api.registries.Registrate;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
 @GTAddon
-public class CMGTAddon implements IGTAddon {
+public class ExampleGTAddon implements IGTAddon {
     @Override
     public GTRegistrate getRegistrate() {
-        return Registrate.REGISTRATE;
+        return ExampleMod.EXAMPLE_REGISTRATE;
     }
 
     @Override
@@ -23,7 +22,7 @@ public class CMGTAddon implements IGTAddon {
 
     @Override
     public String addonModId() {
-        return CompactMachinesMod.MOD_ID;
+        return ExampleMod.MOD_ID;
     }
 
     @Override
