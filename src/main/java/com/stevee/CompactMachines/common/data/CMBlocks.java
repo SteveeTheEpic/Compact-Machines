@@ -24,6 +24,7 @@ public class CMBlocks {
 
     public static final BlockEntry<Block> COMPACT_CHEMICAL_REACTOR_CASING = createCasingBlock("compact_chemical_reactor_casing", CompactMachinesMod.id("block/casings/solid/compact_chemical_reactor_casing"));
     public static final BlockEntry<Block> PCB_FACTORY_CASING = createCasingBlock("pcb_factory_casing", CompactMachinesMod.id("block/casings/solid/pcb_factory_casing"));
+    public static final BlockEntry<Block> CIRCUIT_FACTORY_CASING = createCasingBlock("circuit_factory_casing", CompactMachinesMod.id("block/casings/solid/circuit_factory_casing"));
 
     public static BlockEntry<Block> createCasingBlock(String name,
                                                       NonNullFunction<BlockBehaviour.Properties, Block> blockSupplier,

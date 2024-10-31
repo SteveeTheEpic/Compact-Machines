@@ -7,7 +7,7 @@ import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.logic.OCParams;
 import com.gregtechceu.gtceu.api.recipe.logic.OCResult;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
-import com.stevee.CompactMachines.api.machine.multiblock.PCBFactoryMachine;
+import com.stevee.CompactMachines.api.machine.multiblock.EfficiencyFactoryMachine;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,21 +18,21 @@ public class EfficiencyMultiplier implements RecipeModifier {
     @Override
     public @Nullable GTRecipe apply(MetaMachine machine, @NotNull GTRecipe recipe, @NotNull OCParams params, @NotNull OCResult result) {
 
-        if (!(machine instanceof PCBFactoryMachine pcbFactoryMachine)) return recipe;
+        if (!(machine instanceof EfficiencyFactoryMachine efficiencyFactoryMachine)) return recipe;
 
         recipe = recipe.copy();
-        recipe.duration *= pcbFactoryMachine.getEfficiency();
+        recipe.duration *= efficiencyFactoryMachine.getEfficiency();
         recipe.duration /= 100;
 
         RecipeHelper.getInputContents(recipe, ItemRecipeCapability.CAP).forEach(ingredient -> {
             Arrays.stream(ingredient.getItems()).iterator().forEachRemaining((itemStack) -> {
-                itemStack.setCount(itemStack.getCount() * Math.max((50 / pcbFactoryMachine.getEfficiency()), 1));
+                itemStack.setCount(itemStack.getCount() * Math.max((50 / efficiencyFactoryMachine.getEfficiency()), 1));
             });
         });
 
         RecipeHelper.getOutputContents(recipe, ItemRecipeCapability.CAP).forEach(ingredient -> {
             Arrays.stream(ingredient.getItems()).iterator().forEachRemaining(itemStack -> {
-                itemStack.setCount(itemStack.getCount() * Math.max(((pcbFactoryMachine.getEfficiency()) / 25), 1));
+                itemStack.setCount(itemStack.getCount() * Math.max(((efficiencyFactoryMachine.getEfficiency()) / 25), 1));
             });
         });
 
