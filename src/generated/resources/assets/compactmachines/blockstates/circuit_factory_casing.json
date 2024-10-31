@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "compactmachines:block/circuit_factory_casing"
+    }
+  }
+}

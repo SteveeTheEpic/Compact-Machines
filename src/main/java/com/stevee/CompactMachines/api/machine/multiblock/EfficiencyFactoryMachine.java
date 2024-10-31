@@ -13,11 +13,11 @@ import java.util.function.Supplier;
 
 
 
-public class PCBFactoryMachine extends WorkableElectricMultiblockMachine {
+public class EfficiencyFactoryMachine extends WorkableElectricMultiblockMachine {
 
     private int efficiency = 100;
 
-    public PCBFactoryMachine(IMachineBlockEntity holder, Object... args) {
+    public EfficiencyFactoryMachine(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
     }
 

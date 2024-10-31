@@ -2,12 +2,10 @@ package com.stevee.CompactMachines.common.data;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
-import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
@@ -17,13 +15,10 @@ import com.gregtechceu.gtceu.common.data.GTCompassSections;
 import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-import com.gregtechceu.gtceu.common.machine.multiblock.part.DualHatchPartMachine;
 import com.gregtechceu.gtceu.common.registry.GTRegistration;
 import com.stevee.CompactMachines.CompactMachinesMod;
-import com.stevee.CompactMachines.api.machine.multiblock.PCBFactoryMachine;
+import com.stevee.CompactMachines.api.machine.multiblock.EfficiencyFactoryMachine;
 import com.stevee.CompactMachines.api.recipe.modifier.EfficiencyMultiplier;
-import com.stevee.CompactMachines.common.machine.multiblock.part.LowDualHatchPartMachine;
-import net.minecraft.network.chat.Component;
 
 import java.util.Locale;
 import java.util.function.BiFunction;
@@ -32,8 +27,7 @@ import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.stevee.CompactMachines.api.registries.Registrate.REGISTRATE;
-import static com.stevee.CompactMachines.common.data.CMBlocks.COMPACT_CHEMICAL_REACTOR_CASING;
-import static com.stevee.CompactMachines.common.data.CMBlocks.PCB_FACTORY_CASING;
+import static com.stevee.CompactMachines.common.data.CMBlocks.*;
 
 public class CMMachines {
 
@@ -69,7 +63,7 @@ public class CMMachines {
             .register();
 
     public static final MachineDefinition PCB_FACTORY = REGISTRATE
-            .multiblock("pcb_factory", PCBFactoryMachine::new)
+            .multiblock("pcb_factory", EfficiencyFactoryMachine::new)
             .langValue("PCB Factory V1.01a")
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(CMRecipeTypes.PCB_Factory)
@@ -89,7 +83,28 @@ public class CMMachines {
             .workableCasingRenderer(CompactMachinesMod.id("block/casings/solid/pcb_factory_casing"), GTCEu.id("block/multiblock/large_chemical_reactor"))
             .register();
 
-    public static final MachineDefinition[] LOW_DUAL_IMPORT_HATCH = registerTieredMachines("low_dual_input_hatch",
+    public static final MachineDefinition CIRCUIT_FACTORY = REGISTRATE
+            .multiblock("circuit_factory", EfficiencyFactoryMachine::new)
+            .langValue("Circuit Factory V1.01a")
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(CMRecipeTypes.Circuit_Factory)
+            .recipeModifiers(GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT,
+                    new EfficiencyMultiplier())
+            .appearanceBlock(CIRCUIT_FACTORY_CASING)
+            .pattern(definition -> FactoryBlockPattern.start()
+                    .aisle("DDD", "DDD", "DDD")
+                    .aisle("DDD", "D#D", "DDD")
+                    .aisle("DDD", "DCD", "DDD")
+                    .where("D", autoAbilities(definition.getRecipeTypes())
+                            .or(autoAbilities(true, false, true))
+                            .or(blocks(CIRCUIT_FACTORY_CASING.get())))
+                    .where("C", controller(blocks(definition.getBlock())))
+                    .where("#", air())
+                    .build())
+            .workableCasingRenderer(CompactMachinesMod.id("block/casings/solid/circuit_factory_casing"), GTCEu.id("block/multiblock/large_chemical_reactor"))
+            .register();
+
+    /*public static final MachineDefinition[] LOW_DUAL_IMPORT_HATCH = registerTieredMachines("low_dual_input_hatch",
             (holder, tier) -> new LowDualHatchPartMachine(holder, tier, IO.IN),
             (tier, builder) -> builder
                     .langValue("%s Low Dual Input Hatch".formatted(VNF[tier]))
@@ -108,7 +123,7 @@ public class CMMachines {
                                             DualHatchPartMachine.INITIAL_TANK_CAPACITY, tier))),
                             Component.translatable("gtceu.universal.enabled"))
                     .compassNode("low_dual_hatch")
-                    .register(), GTValues.tiersBetween(HV, IV));
+                    .register(), GTValues.tiersBetween(HV, IV));*/
 
 
     public static MachineDefinition[] registerTieredMachines(String name,

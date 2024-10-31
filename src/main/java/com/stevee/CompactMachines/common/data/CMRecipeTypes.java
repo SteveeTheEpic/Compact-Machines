@@ -1,6 +1,5 @@
 package com.stevee.CompactMachines.common.data;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeSerializer;
@@ -26,6 +25,13 @@ public class CMRecipeTypes {
 
     public static final GTRecipeType PCB_Factory = register("pcb_factory", "multiblock")
             .setMaxIOSize(3, 1, 3, 0)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ASSEMBLER);
+
+    public static final GTRecipeType Circuit_Factory = register("circuit_factory", "multiblock")
+            .setMaxIOSize(6, 1, 3, 0)
+            .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER);

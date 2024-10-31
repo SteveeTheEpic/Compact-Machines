@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "compactmachines:block/pcb_factory_casing"
+    }
+  }
+}
