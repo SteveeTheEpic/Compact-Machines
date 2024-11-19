@@ -5,4 +5,8 @@ the todos of Compact Machines
 - [ ] DTPF (from GT:NH)
 - [ ] Better Assembly Line
 - [ ] Compact Fusion Reactors (maybe from GT:NH the prototypes)
-- [ ] 
+- [ ] AE2 Helper?
+
+### Recipes
+- [ ] Recipes for Circuit Assembler
+- [ ] Recipes for Casings
