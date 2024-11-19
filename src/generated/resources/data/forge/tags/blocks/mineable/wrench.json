@@ -2,6 +2,7 @@
   "values": [
     "compactmachines:compact_chemical_reactor_casing",
     "compactmachines:pcb_factory_casing",
-    "compactmachines:circuit_factory_casing"
+    "compactmachines:circuit_factory_casing",
+    "compactmachines:universium_coil_block"
   ]
 }

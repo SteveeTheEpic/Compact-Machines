@@ -7,9 +7,11 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
+import com.stevee.CompactMachines.api.data.chemical.material.info.CMMaterialIconSet;
 import com.stevee.CompactMachines.api.registries.Registrate;
 import com.stevee.CompactMachines.common.data.CMBlocks;
 import com.stevee.CompactMachines.common.data.CMMachines;
+import com.stevee.CompactMachines.common.data.CMMaterials;
 import com.stevee.CompactMachines.common.data.CMRecipeTypes;
 import com.stevee.CompactMachines.data.CMDataGen;
 import net.minecraft.client.Minecraft;
@@ -32,6 +34,9 @@ public class CompactMachinesMod {
     public CompactMachinesMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        CMBlocks.init();
+        CMMaterialIconSet.init();
+
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::addMaterialRegistries);
@@ -39,8 +44,6 @@ public class CompactMachinesMod {
         modEventBus.addListener(this::modifyMaterials);
         modEventBus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
         modEventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
-
-        CMBlocks.init();
 
         // Most other events are fired on Forge's bus.
         // If we want to use annotations to register event listeners,
@@ -69,7 +72,7 @@ public class CompactMachinesMod {
 
     // As well as this.
     private void addMaterials(MaterialEvent event) {
-        //CustomMaterials.init();
+        CMMaterials.init();
     }
 
     // This is optional, though.

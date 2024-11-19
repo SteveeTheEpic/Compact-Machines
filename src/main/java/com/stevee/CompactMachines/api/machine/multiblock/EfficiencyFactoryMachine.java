@@ -35,7 +35,6 @@ public class EfficiencyFactoryMachine extends WorkableElectricMultiblockMachine 
     }
 
     private Supplier<Integer> supplier() {
-
         if (efficiency > 100)
             efficiency = 100;
 

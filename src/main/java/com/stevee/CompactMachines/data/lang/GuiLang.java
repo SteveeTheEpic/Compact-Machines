@@ -11,7 +11,8 @@ public class GuiLang {
     }
 
     private static void initGuiLang(RegistrateLangProvider provider) {
-        LangHandler.replace(provider, "compactmachines.pcb_factory", "PCB Factory V1.01a1");
+        LangHandler.replace(provider, "compactmachines.pcb_factory", "PCB Factory V1.01a");
+        LangHandler.replace(provider, "compactmachines.circuit_factory", "Circuit Factory V1.01a");
     }
 
 }

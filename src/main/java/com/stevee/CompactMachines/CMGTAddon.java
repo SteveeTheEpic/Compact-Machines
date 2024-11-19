@@ -2,8 +2,12 @@ package com.stevee.CompactMachines;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
+import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
+import com.gregtechceu.gtceu.api.fluids.FluidState;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.gregtechceu.gtceu.integration.kjs.builders.MaterialIconSetBuilder;
 import com.stevee.CompactMachines.api.registries.Registrate;
+import com.stevee.CompactMachines.common.data.CMElement;
 import com.stevee.CompactMachines.data.recipes.CMRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -19,7 +23,6 @@ public class CMGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
-
     }
 
     @Override
@@ -36,6 +39,10 @@ public class CMGTAddon implements IGTAddon {
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         CMRecipes.init(provider);
     }
+    @Override
+    public void registerElements() {
+        CMElement.init();
+    }
     
     // If you have custom ingredient types, uncomment this & change to match your capability.
     // KubeJS WILL REMOVE YOUR RECIPES IF THESE ARE NOT REGISTERED.
@@ -48,4 +55,9 @@ public class CMGTAddon implements IGTAddon {
         event.registerKey(CustomRecipeCapabilities.PRESSURE, Pair.of(PRESSURE_IN, PRESSURE_OUT));
     }
     */
+
+    @Override
+    public boolean requiresHighTier() {
+        return true;
+    }
 }

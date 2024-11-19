@@ -60,6 +60,48 @@ public class CircuitFactory {
                 .outputItems(MAINFRAME_IV, 1)
                 .duration(200).EUt(VA[HV]).save(provider);
 
+        Circuit_Factory.recipeBuilder("nano_processor")
+                .inputItems(ADVANCED_CIRCUIT_BOARD)
+                .inputItems(NANO_CENTRAL_PROCESSING_UNIT)
+                .inputItems(SMD_RESISTOR, 4)
+                .inputItems(SMD_CAPACITOR, 4)
+                .inputItems(SMD_TRANSISTOR, 4)
+                .inputFluids(SolderingAlloy.getFluid(72))
+                .outputItems(NANO_PROCESSOR_HV, 2)
+                .duration(200).EUt(VA[HV]).save(provider);
+
+        Circuit_Factory.recipeBuilder("nano_processor_assembly")
+                .inputItems(ADVANCED_CIRCUIT_BOARD)
+                .inputItems(NANO_PROCESSOR_HV, 2)
+                .inputItems(SMD_INDUCTOR, 2)
+                .inputItems(SMD_CAPACITOR, 4)
+                .inputItems(RANDOM_ACCESS_MEMORY, 4)
+                .inputItems(wireFine, Electrum, 4)
+                .inputFluids(SolderingAlloy.getFluid(144))
+                .outputItems(NANO_PROCESSOR_ASSEMBLY_EV, 2)
+                .duration(200).EUt(VA[HV]).save(provider);
+
+        Circuit_Factory.recipeBuilder("nano_supercomputer")
+                .inputItems(ADVANCED_CIRCUIT_BOARD)
+                .inputItems(NANO_PROCESSOR_ASSEMBLY_EV, 2)
+                .inputItems(ADVANCED_SMD_DIODE, 2)
+                .inputItems(NOR_MEMORY_CHIP, 2)
+                .inputItems(RANDOM_ACCESS_MEMORY, 8)
+                .inputItems(wireFine, Electrum, 8)
+                .inputFluids(SolderingAlloy.getFluid(144))
+                .outputItems(NANO_COMPUTER_IV)
+                .duration(200).EUt(VA[HV]).save(provider);
+
+        Circuit_Factory.recipeBuilder("nano_mainframe")
+                .inputItems(frameGt, Aluminium, 2)
+                .inputItems(NANO_COMPUTER_IV, 2)
+                .inputItems(SMD_INDUCTOR, 8)
+                .inputItems(SMD_CAPACITOR, 16)
+                .inputItems(RANDOM_ACCESS_MEMORY, 8)
+                .inputItems(wireGtSingle, AnnealedCopper, 16)
+                .inputFluids(SolderingAlloy.getFluid(288))
+                .outputItems(NANO_MAINFRAME_LuV)
+                .duration(200).EUt(VA[HV]).save(provider);
 
     }
 
