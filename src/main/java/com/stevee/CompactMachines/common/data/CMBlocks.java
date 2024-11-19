@@ -35,7 +35,7 @@ public class CMBlocks {
     public static final BlockEntry<Block> PCB_FACTORY_CASING = createCasingBlock("pcb_factory_casing", CompactMachinesMod.id("block/casings/solid/pcb_factory_casing"));
     public static final BlockEntry<Block> CIRCUIT_FACTORY_CASING = createCasingBlock("circuit_factory_casing", CompactMachinesMod.id("block/casings/solid/circuit_factory_casing"));
 
-    public static final BlockEntry<CoilBlock> UNIVERSIUM_COIL_BLOCK = createCoilBlock(CMCoilBlock.CoilType.UNIVERSIUM);
+    //public static final BlockEntry<CoilBlock> UNIVERSIUM_COIL_BLOCK = createCoilBlock(CMCoilBlock.CoilType.UNIVERSIUM);
 
     public static BlockEntry<Block> createCasingBlock(String name,
                                                       NonNullFunction<BlockBehaviour.Properties, Block> blockSupplier,

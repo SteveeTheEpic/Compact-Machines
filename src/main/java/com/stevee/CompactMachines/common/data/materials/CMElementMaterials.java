@@ -14,6 +14,6 @@ public class CMElementMaterials {
     public static final Material Universium = new Material.Builder(CompactMachinesMod.id("universium"))
             .ingot().iconSet(CMMaterialIconSet.UNIVERSIUM).element(CMElement.Un)
             .liquid(new FluidBuilder().temperature(14000).state(FluidState.LIQUID).customStill())
-            .cableProperties(GTValues.V[GTValues.MAX], 64, 0, true)
+            .cableProperties(GTValues.V[GTValues.MAX] - 1, 64, 0, true)
             .buildAndRegister();
 }
