@@ -3,6 +3,7 @@ package com.stevee.CompactMachines.common.data;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.stevee.CompactMachines.CompactMachinesMod;
 import com.stevee.CompactMachines.api.registries.Registrate;
+import com.stevee.CompactMachines.common.data.machines.CMMachines;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.world.item.CreativeModeTab;
 

@@ -10,9 +10,10 @@ import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.stevee.CompactMachines.api.data.chemical.material.info.CMMaterialIconSet;
 import com.stevee.CompactMachines.api.registries.Registrate;
 import com.stevee.CompactMachines.common.data.CMBlocks;
-import com.stevee.CompactMachines.common.data.CMMachines;
+import com.stevee.CompactMachines.common.data.machines.CMMachines;
 import com.stevee.CompactMachines.common.data.CMMaterials;
 import com.stevee.CompactMachines.common.data.CMRecipeTypes;
+import com.stevee.CompactMachines.common.data.machines.FusionReactor;
 import com.stevee.CompactMachines.data.CMDataGen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -86,6 +87,7 @@ public class CompactMachinesMod {
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         CMMachines.init();
+        FusionReactor.init();
     }
 
     public static ResourceLocation id(String path) {

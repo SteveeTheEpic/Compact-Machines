@@ -6,7 +6,7 @@ import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.data.recipe.CustomTags.*;
 
-import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.common.data.GTItems;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -17,7 +17,7 @@ public class CircuitFactory {
 
     public static void init(Consumer<FinishedRecipe> provider) {
 
-        Circuit_Factory.recipeBuilder("microprocessor")
+        /*Circuit_Factory.recipeBuilder("microprocessor")
                 .inputItems(PLASTIC_CIRCUIT_BOARD, 1)
                 .inputItems(CENTRAL_PROCESSING_UNIT, 1)
                 .inputItems(RESISTORS, 2)
@@ -103,6 +103,35 @@ public class CircuitFactory {
                 .outputItems(NANO_MAINFRAME_LuV)
                 .duration(200).EUt(VA[HV]).save(provider);
 
+        Circuit_Factory.recipeBuilder("quantum_processor")
+                .inputItems(EXTREME_CIRCUIT_BOARD)
+                .inputItems(QUBIT_CENTRAL_PROCESSING_UNIT)
+                .inputItems(NANO_CENTRAL_PROCESSING_UNIT)
+                .inputItems(ADVANCED_SMD_CAPACITOR, 2)
+                .inputItems(ADVANCED_SMD_TRANSISTOR, 4)
+                .inputItems(wireFine, Platinum, 6)
+                .inputFluids(SolderingAlloy.getFluid(36))
+                .duration(200).EUt(VA[HV]).save(provider);
+
+        Circuit_Factory.recipeBuilder("quantum_processor_assembly")
+                .inputItems(EXTREME_CIRCUIT_BOARD)
+                .inputItems(QUANTUM_PROCESSOR_EV)
+                .inputItems(ADVANCED_SMD_INDUCTOR)
+                .inputItems(ADVANCED_SMD_CAPACITOR, 2)
+                .inputItems(RANDOM_ACCESS_MEMORY, 2)
+                .inputItems(wireFine, Platinum, 8)
+                .inputFluids(SolderingAlloy.getFluid(72))
+                .duration(200).EUt(VA[HV]).save(provider);
+
+        Circuit_Factory.recipeBuilder("quantum_supercomputer")
+                .inputItems(EXTREME_CIRCUIT_BOARD)
+                .inputItems(QUANTUM_ASSEMBLY_IV)
+                .inputItems(ADVANCED_SMD_DIODE, 2)
+                .inputItems(NOR_MEMORY_CHIP, 4)
+                .inputItems(RANDOM_ACCESS_MEMORY, 16)
+                .inputItems(wireFine, Platinum, 32)
+                .duration(200).EUt(VA[HV]).save(provider);
+        */
     }
 
 }

@@ -1,4 +1,4 @@
-package com.stevee.CompactMachines.common.data;
+package com.stevee.CompactMachines.common.data.machines;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -19,6 +19,7 @@ import com.gregtechceu.gtceu.common.registry.GTRegistration;
 import com.stevee.CompactMachines.CompactMachinesMod;
 import com.stevee.CompactMachines.api.machine.multiblock.EfficiencyFactoryMachine;
 import com.stevee.CompactMachines.api.recipe.modifier.EfficiencyMultiplier;
+import com.stevee.CompactMachines.common.data.CMRecipeTypes;
 
 import java.util.Locale;
 import java.util.function.BiFunction;
@@ -87,7 +88,7 @@ public class CMMachines {
             .multiblock("circuit_factory", EfficiencyFactoryMachine::new)
             .langValue("Circuit Factory V1.01a")
             .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(CMRecipeTypes.Circuit_Factory)
+            .recipeTypes(CMRecipeTypes.Circuit_Factory, GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES)
             .recipeModifiers(GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT,
                     new EfficiencyMultiplier())
             .appearanceBlock(CIRCUIT_FACTORY_CASING)

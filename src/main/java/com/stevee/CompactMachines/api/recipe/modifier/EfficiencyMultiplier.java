@@ -22,7 +22,7 @@ public class EfficiencyMultiplier implements RecipeModifier {
 
         recipe = recipe.copy();
         recipe.duration *= efficiencyFactoryMachine.getEfficiency();
-        recipe.duration /= 100;
+        recipe.duration /= 50;
 
         RecipeHelper.getInputContents(recipe, ItemRecipeCapability.CAP).forEach(ingredient -> {
             Arrays.stream(ingredient.getItems()).iterator().forEachRemaining((itemStack) -> {

@@ -140,7 +140,7 @@ dependencies {
     modRuntimeOnly("mezz.jei:jei-$project.minecraft_version-forge:$project.jei_version") { transitive = false }
     
     modRuntimeOnly ("dev.emi:emi-forge:$project.emi_version+$project.minecraft_version")
-
+    //implementation ("curse.maven:fusion-connected-textures-854949:5129294")
     // Mixin Extras
     implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:$project.mixinextras_version"))
     implementation(include("io.github.llamalad7:mixinextras-forge:$project.mixinextras_version"))
