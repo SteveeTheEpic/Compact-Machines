@@ -92,6 +92,7 @@
   "block.compactmachines.circuit_factory_casing": "Circuit Factory Casing",
   "block.compactmachines.compact_chemical_reactor": "Compact Chemical Reactor",
   "block.compactmachines.compact_chemical_reactor_casing": "Compact Chemical Reactor Casing",
+  "block.compactmachines.compact_fusion_reactor": "Compact Fusion Reactor",
   "block.compactmachines.pcb_factory": "PCB Factory V1.01a",
   "block.compactmachines.pcb_factory_casing": "PCB Factory Casing",
   "block.filter_casing.tooltip": "Creates a §aParticle-Free§7 environment",

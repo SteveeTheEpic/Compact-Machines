@@ -17,7 +17,7 @@ public class CircuitFactory {
 
     public static void init(Consumer<FinishedRecipe> provider) {
 
-        /*Circuit_Factory.recipeBuilder("microprocessor")
+        Circuit_Factory.recipeBuilder("microprocessor")
                 .inputItems(PLASTIC_CIRCUIT_BOARD, 1)
                 .inputItems(CENTRAL_PROCESSING_UNIT, 1)
                 .inputItems(RESISTORS, 2)
@@ -111,6 +111,7 @@ public class CircuitFactory {
                 .inputItems(ADVANCED_SMD_TRANSISTOR, 4)
                 .inputItems(wireFine, Platinum, 6)
                 .inputFluids(SolderingAlloy.getFluid(36))
+                .outputItems(QUANTUM_PROCESSOR_EV)
                 .duration(200).EUt(VA[HV]).save(provider);
 
         Circuit_Factory.recipeBuilder("quantum_processor_assembly")
@@ -121,6 +122,7 @@ public class CircuitFactory {
                 .inputItems(RANDOM_ACCESS_MEMORY, 2)
                 .inputItems(wireFine, Platinum, 8)
                 .inputFluids(SolderingAlloy.getFluid(72))
+                .inputItems(QUANTUM_ASSEMBLY_IV)
                 .duration(200).EUt(VA[HV]).save(provider);
 
         Circuit_Factory.recipeBuilder("quantum_supercomputer")
@@ -130,8 +132,9 @@ public class CircuitFactory {
                 .inputItems(NOR_MEMORY_CHIP, 4)
                 .inputItems(RANDOM_ACCESS_MEMORY, 16)
                 .inputItems(wireFine, Platinum, 32)
+                .outputItems(QUANTUM_COMPUTER_LuV)
                 .duration(200).EUt(VA[HV]).save(provider);
-        */
+
     }
 
 }

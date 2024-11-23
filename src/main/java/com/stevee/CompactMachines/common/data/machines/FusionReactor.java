@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.stevee.CompactMachines.api.recipe.modifier.FusionMultiplier;
+import net.minecraft.network.chat.Component;
 
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.stevee.CompactMachines.api.registries.Registrate.REGISTRATE;
@@ -19,6 +20,7 @@ public class FusionReactor {
     public static final MachineDefinition compact_fusion_reactor = REGISTRATE
             .multiblock("compact_fusion_reactor", WorkableElectricMultiblockMachine::new)
             .langValue("Compact Fusion Reactor")
+            .tooltips(Component.literal("This machine requires 100x more resources than the Fusion Reactor"))
             .rotationState(RotationState.ALL)
             .recipeType(GTRecipeTypes.FUSION_RECIPES)
             .recipeModifiers(new FusionMultiplier())

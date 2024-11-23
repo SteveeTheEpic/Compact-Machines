@@ -14,6 +14,9 @@ public class FusionMultiplier implements RecipeModifier {
     @Override
     public @Nullable GTRecipe apply(MetaMachine machine, @NotNull GTRecipe recipe, @NotNull OCParams params, @NotNull OCResult result) {
         recipe = recipe.copy();
+
+        recipe.duration = recipe.duration * 5;
+
         RecipeHelper.getInputContents(recipe, FluidRecipeCapability.CAP).forEach(fluidIngredient ->
                 fluidIngredient.setAmount(fluidIngredient.getAmount() * 16)
         );
