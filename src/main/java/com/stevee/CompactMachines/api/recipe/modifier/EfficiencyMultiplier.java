@@ -4,8 +4,8 @@ import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
-import com.gregtechceu.gtceu.api.recipe.logic.OCParams;
-import com.gregtechceu.gtceu.api.recipe.logic.OCResult;
+import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
+import com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction;
 import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
 import com.stevee.CompactMachines.api.machine.multiblock.EfficiencyFactoryMachine;
 import org.jetbrains.annotations.NotNull;
@@ -14,32 +14,28 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 
 public class EfficiencyMultiplier implements RecipeModifier {
+    @Override
+    public @NotNull ModifierFunction getModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) {
+        if (!(machine instanceof EfficiencyFactoryMachine efficiencyFactoryMachine)) return ModifierFunction.IDENTITY;
+        int eff = efficiencyFactoryMachine.getEfficiency();
+        return ModifierFunction.builder()
+                .durationModifier(ContentModifier.multiplier(Math.max(eff/25, 1)))
+                .inputModifier(ContentModifier.multiplier(Math.max(25/eff, 1)))
+                .outputModifier(ContentModifier.multiplier(Math.max(eff/25, 1)))
+                .build();
+    }
 
     @Override
-    public @Nullable GTRecipe apply(MetaMachine machine, @NotNull GTRecipe recipe, @NotNull OCParams params, @NotNull OCResult result) {
+    public @Nullable GTRecipe applyModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) {
 
         if (!(machine instanceof EfficiencyFactoryMachine efficiencyFactoryMachine)) return recipe;
+        int eff = efficiencyFactoryMachine.getEfficiency();
 
-        recipe = recipe.copy();
-        recipe.duration *= efficiencyFactoryMachine.getEfficiency();
-        recipe.duration /= 50;
-
-        RecipeHelper.getInputContents(recipe, ItemRecipeCapability.CAP).forEach(ingredient -> {
-            Arrays.stream(ingredient.getItems()).iterator().forEachRemaining((itemStack) -> {
-                itemStack.setCount(itemStack.getCount() * Math.max((50 / efficiencyFactoryMachine.getEfficiency()), 1));
-            });
-        });
-
-        RecipeHelper.getOutputContents(recipe, ItemRecipeCapability.CAP).forEach(ingredient -> {
-            Arrays.stream(ingredient.getItems()).iterator().forEachRemaining(itemStack -> {
-                itemStack.setCount(itemStack.getCount() * Math.max(((efficiencyFactoryMachine.getEfficiency()) / 25), 1));
-            });
-        });
-
-        if (recipe.duration <= 0) {
-            recipe.duration = 1;
-        }
-
-        return recipe;
+        return ModifierFunction.builder()
+                .durationModifier(ContentModifier.multiplier(Math.max(eff/25, 1)))
+                .inputModifier(ContentModifier.multiplier(Math.max(25/eff, 1)))
+                .outputModifier(ContentModifier.multiplier(Math.max(eff/25, 1)))
+                .build().apply(recipe);
+        //return recipe;
     }
 }

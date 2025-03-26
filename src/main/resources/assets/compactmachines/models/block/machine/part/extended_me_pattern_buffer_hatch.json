@@ -1,0 +1,6 @@
+{
+  "parent": "gtceu:block/overlay/front",
+  "textures": {
+    "overlay": "compactmachines:block/overlay/appeng/extended_me_pattern_buffer_hatch"
+  }
+}

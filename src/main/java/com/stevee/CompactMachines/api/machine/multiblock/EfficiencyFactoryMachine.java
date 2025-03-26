@@ -30,7 +30,7 @@ public class EfficiencyFactoryMachine extends WorkableElectricMultiblockMachine 
                         .textSupplier(Objects.requireNonNull(this.getLevel()).isClientSide ? null : this::addDisplayText)
                         .setMaxWidthLimit(200)
                         .clickHandler(this::handleDisplayClick));
-        group.setBackground(GuiTextures.BACKGROUND_INVERSE);;
+        group.setBackground(GuiTextures.BACKGROUND_INVERSE);
         return group;
     }
 

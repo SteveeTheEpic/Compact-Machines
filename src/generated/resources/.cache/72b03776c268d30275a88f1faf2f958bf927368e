@@ -1,9 +1,9 @@
-// 1.20.1	2024-11-19T18:20:07.3927165	Registrate Provider for compactmachines [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.20.1	2025-01-17T23:04:04.3039174	Registrate Provider for compactmachines [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 ec612aada011c09a395779433cd6bcf9957f22da assets/compactmachines/blockstates/circuit_factory_casing.json
 29ffa799cc71f956e1e616f29c629c356ed4bdb8 assets/compactmachines/blockstates/compact_chemical_reactor_casing.json
 a46fd5de7fd600f9d73fd5c6f4342ad340142166 assets/compactmachines/blockstates/pcb_factory_casing.json
-497e096240bd4f2b5efb02e574a1a797bbad9086 assets/compactmachines/lang/en_ud.json
-49e6b1db7428d99fc7db1d3ea37eabdbb23b6bcd assets/compactmachines/lang/en_us.json
+bcac9a0f6e8b0382f9772657c49570ece6794a30 assets/compactmachines/lang/en_ud.json
+599520a3a09ed755d99310189ca34db952e512bb assets/compactmachines/lang/en_us.json
 770c56cccc990b79fe15b958384fd377f8e4d308 assets/compactmachines/models/block/circuit_factory_casing.json
 5d58c66da165661387957c47fe13129fc6abfa4c assets/compactmachines/models/block/compact_chemical_reactor_casing.json
 a5a08c0b54db0ccd4109bec60c92dcfa01b14d37 assets/compactmachines/models/block/pcb_factory_casing.json

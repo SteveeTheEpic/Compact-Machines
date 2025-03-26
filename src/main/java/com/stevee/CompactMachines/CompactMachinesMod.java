@@ -27,6 +27,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+@SuppressWarnings("removal")
 @Mod(CompactMachinesMod.MOD_ID)
 public class CompactMachinesMod {
     public static final String MOD_ID = "compactmachines";

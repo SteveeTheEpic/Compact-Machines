@@ -16,7 +16,7 @@ import static com.stevee.CompactMachines.common.data.materials.CMElementMaterial
 public class CMCoilBlock {
     public enum CoilType implements StringRepresentable, ICoilType {
 
-        UNIVERSIUM("universium", 14001, 20, 8,() -> Universium, CompactMachinesMod.id("block/casings/coils/universium/universium_block_coil"));
+        UNIVERSIUM("universium", 14001, 20, 8,() -> Universium, CompactMachinesMod.id("block/casings/coils/universium/universium_coil_block"));
         @NotNull
         @Getter
         private final String name;

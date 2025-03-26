@@ -11,6 +11,7 @@ public class BlockLang {
 
     private static void initCasingLang(RegistrateLangProvider provider) {
         LangHandler.replace(provider, "block.compactmachines.pcb_factory_casing", "PCB Factory Casing");
+        LangHandler.replace(provider, "block.compactmachines.sterile_maintenance_hatch", "Sterile Maintenance Hatch");
     }
 
 }

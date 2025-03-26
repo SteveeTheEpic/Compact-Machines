@@ -6,7 +6,6 @@ import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.data.recipe.CustomTags.*;
 
-import com.gregtechceu.gtceu.common.data.GTItems;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -122,7 +121,7 @@ public class CircuitFactory {
                 .inputItems(RANDOM_ACCESS_MEMORY, 2)
                 .inputItems(wireFine, Platinum, 8)
                 .inputFluids(SolderingAlloy.getFluid(72))
-                .inputItems(QUANTUM_ASSEMBLY_IV)
+                .outputItems(QUANTUM_ASSEMBLY_IV)
                 .duration(200).EUt(VA[HV]).save(provider);
 
         Circuit_Factory.recipeBuilder("quantum_supercomputer")
